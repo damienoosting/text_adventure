@@ -10,8 +10,10 @@ public class Application implements Runnable {
     }
 
     public void run() {
-
-
+        //menu
+        SaxionApp.printLine("1. start");
+        SaxionApp.printLine("2. settings");
+        SaxionApp.printLine("3.exit");
     }
 }
 
