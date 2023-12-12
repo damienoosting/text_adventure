@@ -1,7 +1,6 @@
 import nl.saxion.app.SaxionApp;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Toolkit;
+
+import java.awt.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
@@ -16,6 +15,9 @@ public class Application implements Runnable {
         boolean menu = true;
 
         menu();
+        boolean music = true;
+
+        SaxionApp.playSound("C:\\Users\\Damien\\Documents\\slayergame\\text_adventure\\Sandbox\\Sandbox\\Sandbox\\src\\The Rebel Path (Cyberpunk 2077 Soundtrack).wav", music);
         char select = SaxionApp.readChar();
         if (select == '2') {
             menu = false;
@@ -38,6 +40,7 @@ public class Application implements Runnable {
     }
 
     public void menu() {
+        SaxionApp.drawImage("C:\\Users\\Damien\\Documents\\slayergame\\text_adventure\\Sandbox\\Sandbox\\Sandbox\\src\\HD-wallpaper-cyberpunk-city-pixel-art.jpg",0,0,1024,768);
         String text = "cyberpunk";
         String menu1 = "1.start";
         String menu2 = "2.quit";
@@ -45,6 +48,8 @@ public class Application implements Runnable {
         int x = 250;
 
         while (i < text.length()) {
+            SaxionApp.setTextDrawingColor(SaxionApp.createColor(253,237,10));
+            //121,222,209 cyberpunk text blue
             SaxionApp.drawText(String.valueOf(text.charAt(i)), x, 150, 100);
 
             try {
@@ -75,9 +80,9 @@ public class Application implements Runnable {
 
         int i = 0;
         int x = 250;
-
+        SaxionApp.print("V:",SaxionApp.createColor(237,109,97));
         while (i < text.length()) {
-            SaxionApp.print(String.valueOf(text.charAt(i)));
+            SaxionApp.print(String.valueOf(text.charAt(i)),SaxionApp.createColor(121,222,209));
 
             try {
 
@@ -93,9 +98,9 @@ public class Application implements Runnable {
         SaxionApp.printLine();
         SaxionApp.printLine();
         SaxionApp.printLine();
-        SaxionApp.printLine("1. story option a");
+        SaxionApp.printLine("1. story option a",SaxionApp.createColor(237,109,97));
         SaxionApp.printLine();
-        SaxionApp.printLine("2. story option b");
+        SaxionApp.printLine("2. story option b",SaxionApp.createColor(237,109,97));
     }
     public void board2() {
         String text = """
