@@ -1,6 +1,8 @@
 import nl.saxion.app.SaxionApp;
+import nl.saxion.app.audio.MediaPlayer;
 
 import java.awt.*;
+import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
@@ -13,20 +15,23 @@ public class Application implements Runnable {
     public void run() {
         //menu
         boolean menu = true;
+        SaxionApp.playSound("Sandbox/Sandbox/Sandbox/src/nightcall2.wav");
 
         menu();
-        boolean music = true;
 
-        SaxionApp.playSound("C:\\Users\\Damien\\Documents\\slayergame\\text_adventure\\Sandbox\\Sandbox\\Sandbox\\src\\The Rebel Path (Cyberpunk 2077 Soundtrack).wav", music);
+
         char select = SaxionApp.readChar();
+        SaxionApp.stopSound("Sandbox/Sandbox/Sandbox/src/nightcall2.wav");
         if (select == '2') {
             menu = false;
         } else if (select == '1') {
+
             SaxionApp.clear();
             board1();
             char option = SaxionApp.readChar();
             if (option == '1') {
                 SaxionApp.clear();
+
                 board2();
 
             } else {
@@ -36,7 +41,16 @@ public class Application implements Runnable {
             }
 
         }
+        boolean egg = true;
+        while(egg){
+            String eastereggs = SaxionApp.readString();
+            if (eastereggs.equalsIgnoreCase("edgerunner")){
+                SaxionApp.playSound("Sandbox/Sandbox/Sandbox/src/easteregg.wav");
+            }else{
+                egg = false;
+            }
 
+        }
     }
 
     public void menu() {
@@ -145,4 +159,6 @@ public class Application implements Runnable {
         }
 
     }
+
+
 }
