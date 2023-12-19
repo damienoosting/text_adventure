@@ -54,7 +54,7 @@ public class Application implements Runnable {
     }
 
     public void menu() {
-        SaxionApp.drawImage("C:\\Users\\Damien\\Documents\\slayergame\\text_adventure\\Sandbox\\Sandbox\\Sandbox\\src\\HD-wallpaper-cyberpunk-city-pixel-art.jpg",0,0,1024,768);
+        SaxionApp.drawImage("Sandbox/Sandbox/Sandbox/src/HD-wallpaper-cyberpunk-city-pixel-art.jpg",0,0,1024,768);
         String text = "cyberpunk";
         String menu1 = "1.start";
         String menu2 = "2.quit";
